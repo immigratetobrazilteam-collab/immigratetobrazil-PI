@@ -1,11 +1,11 @@
 body {
     margin: 0;
-    font-family: Sans Serif, sans-serif;
+    font-family: Sans Serif;
     background: #FAF0E6;
     color: #A0522D;
 }
 h1, h2 {
-    font-family: Desert, serif;
+    font-family: Desert;
     color: #F4A460;
 }
 a {
