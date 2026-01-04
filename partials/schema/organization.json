@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Immigrate to Piau\u00ed",
+  "description": "Piau\u00ed is a Brazilian state in the Northeast Region with a short Atlantic coastline, capital Teresina located inland, and notable UNESCO World Heritage sites like Serra da Capivara National Park featuring ancient rock art and canyons in a caatinga landscape.",
+  "keywords": "Piau\u00ed, Teresina, Serra da Capivara, Caatinga, Festa Junina, Carnival, Parna\u00edba River",
+  "url": "https://immigratetobrazil.com/pi/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Piau\u00ed",
+    "addressCountry": "BR"
+  },
+  "sameAs": [
+    "https://web.archive.org/web/20101127193721/http://www.piaui.pi.gov.br/",
+    "https://sites.google.com/site/piauibrazil/",
+    "https://commons.wikimedia.org/wiki/Piau\u00ed"
+  ]
+}
