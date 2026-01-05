@@ -1,8 +1,39 @@
-<nav aria-label="Primary navigation">
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/services/artistic-visa">Artistic Visa</a></li>
-        <li><a href="/pi">Explore Piauí</a></li>
-    </ul>
+<nav aria-label="Primary navigation" class="bg-[#F4A460] text-white shadow-md" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <div class="container mx-auto px-4">
+        <ul class="flex flex-wrap gap-4 py-4 justify-center md:justify-start">
+            <li><a href="/" class="px-4 py-2 hover:bg-white/10 rounded" title="Home page">Home</a></li>
+            <li class="relative group">
+                <a href="/services" class="px-4 py-2 hover:bg-white/10 rounded aria-haspopup="true" aria-expanded="false">Services</a>
+                <ul class="absolute hidden group-hover:block bg-white text-[#A0522D] shadow-lg rounded-md p-4 min-w-max z-10">
+                    <li class="font-bold mb-1">Travel Services</li>
+                    
+                    <li class="font-bold mt-2 mb-1">Brazilian Visas</li>
+                    <li><a href="/visas/artistic-visa" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Artistic Visa">Artistic Visa</a></li>
+                    <li class="font-bold mt-2 mb-1">Residency Permits</li>
+                    
+                    <li class="font-bold mt-2 mb-1">Citizenship & Naturalisation</li>
+                    
+                    <li class="font-bold mt-2 mb-1">Other Services</li>
+                    
+                </ul>
+            </li>
+            <li class="relative group">
+                <a href="/pi" class="px-4 py-2 hover:bg-white/10 rounded aria-haspopup="true" aria-expanded="false">Explore Piauí</a>
+                <ul class="absolute hidden group-hover:block bg-white text-[#A0522D] shadow-lg rounded-md p-4 min-w-max z-10">
+                    <li><a href="/explore/serra-da-capivara-national-park" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Serra da Capivara National Park">Serra da Capivara National Park</a></li><li><a href="/explore/sete-cidades-national-park" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Sete Cidades National Park">Sete Cidades National Park</a></li><li><a href="/explore/teresina-(capital-and-largest-city)" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Teresina (capital and largest city)">Teresina (capital and largest city)</a></li><li><a href="/explore/caatinga-shrublands" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Caatinga shrublands">Caatinga shrublands</a></li><li><a href="/explore/canyons" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="canyons">canyons</a></li><li><a href="/explore/parnaíba-river" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Parnaíba River">Parnaíba River</a></li><li><a href="/explore/poti-river" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Poti River">Poti River</a></li><li><a href="/explore/serra-das-confusões-national-park" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Serra das Confusões National Park">Serra das Confusões National Park</a></li><li><a href="/explore/chapada-das-mangabeiras" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Chapada das Mangabeiras">Chapada das Mangabeiras</a></li><li><a href="/explore/northeastern-brazil-restingas" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Northeastern Brazil restingas">Northeastern Brazil restingas</a></li><li><a href="/explore/maranhão-babaçu-forests" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Maranhão Babaçu forests">Maranhão Babaçu forests</a></li><li><a href="/explore/cerrado-savannas" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Cerrado savannas">Cerrado savannas</a></li><li><a href="/explore/atlantic-dry-forests" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Atlantic dry forests">Atlantic dry forests</a></li><li><a href="/explore/serra-da-capivara-national-park" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Serra da Capivara National Park">Serra da Capivara National Park</a></li><li><a href="/explore/sete-cidades-national-park" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Sete Cidades National Park">Sete Cidades National Park</a></li><li><a href="/explore/serra-das-confusões-national-park" class="block px-4 py-2 hover:bg-[#8B4513]/20" title="Serra das Confusões National Park">Serra das Confusões National Park</a></li>
+                </ul>
+            </li>
+            <li><a href="/contact" class="px-4 py-2 hover:bg-white/10 rounded" title="Contact Us">Contact</a></li>
+            <li><a href="/faq" class="px-4 py-2 hover:bg-white/10 rounded" title="Frequently Asked Questions">FAQ</a></li>
+            <li><a href="/blog" class="px-4 py-2 hover:bg-white/10 rounded" title="Blog">Blog</a></li>
+            <li><a href="/about" class="px-4 py-2 hover:bg-white/10 rounded" title="About Us">About</a></li>
+        </ul>
+    </div>
+    <script>
+        // Desktop hover with keyboard support
+        document.querySelectorAll('.group > a[aria-haspopup]').forEach(toggle => {
+            toggle.addEventListener('focus', () => toggle.nextElementSibling.classList.add('block'));
+            toggle.addEventListener('blur', (e) => { if (!toggle.parentElement.contains(e.relatedTarget)) toggle.nextElementSibling.classList.remove('block'); });
+        });
+    </script>
 </nav>
