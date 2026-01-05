@@ -559,7 +559,11 @@
   ]
 }
 </script>
-
+</head>
+<body>
+    <div id="header-placeholder"></div>  <!-- Where header will load -->
+    
+    <main>
 <!-- ===================================================== -->
 <!-- PAGE IDENTITY -->
 <!-- State code, state name, capital city, region, timezone -->
@@ -1093,6 +1097,26 @@
         <button type="submit">Send</button>
     </form>
 </section>
-<script src="main.js"></script>
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+<div id="footer-placeholder"></div>  <!-- Where footer will load -->
+    
+    <script>
+        // Function to load a partial
+        function loadPartial(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading partial:', error));
+        }
+
+        // Load header and footer
+        loadPartial('partials/header.html', 'header-placeholder');
+        loadPartial('partials/footer.html', 'footer-placeholder');
+    </script>
 </body>
 </html>
