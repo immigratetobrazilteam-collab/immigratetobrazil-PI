@@ -1,52 +1,15 @@
-<nav class="mobile-nav md:hidden" aria-label="Mobile navigation">
-    <button aria-expanded="false" aria-controls="mobile-menu" class="w-full px-4 py-2 bg-[#F4A460] text-white rounded flex justify-between items-center">Menu <i class="fas fa-chevron-down"></i></button>
-    <ul id="mobile-menu" class="hidden flex flex-col bg-white shadow-md rounded-md mt-1 overflow-auto max-h-[80vh]">
-        <li><a href="/" class="block px-4 py-2 hover:bg-[#8B4513]/10">Home</a></li>
-        <li>
-            <button class="w-full text-left px-4 py-2 hover:bg-[#8B4513]/10 flex justify-between items-center" aria-expanded="false" aria-controls="services-sub">Services <i class="fas fa-chevron-down"></i></button>
-            <ul id="services-sub" class="hidden pl-4">
-                <li class="font-bold py-1">Travel Services</li>
-                
-                <li class="font-bold py-1 mt-2">Brazilian Visas</li>
-                <li><a href="/visas/artistic-visa" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Artistic Visa">Artistic Visa</a></li>
-                <li class="font-bold py-1 mt-2">Residency Permits</li>
-                
-                <li class="font-bold py-1 mt-2">Citizenship & Naturalisation</li>
-                
-                <li class="font-bold py-1 mt-2">Other Services</li>
-                
-            </ul>
-        </li>
-        <li>
-            <button class="w-full text-left px-4 py-2 hover:bg-[#8B4513]/10 flex justify-between items-center" aria-expanded="false" aria-controls="explore-sub">Explore Piauí <i class="fas fa-chevron-down"></i></button>
-            <ul id="explore-sub" class="hidden pl-4">
-                <li><a href="/explore/serra-da-capivara-national-park" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Serra da Capivara National Park">Serra da Capivara National Park</a></li><li><a href="/explore/sete-cidades-national-park" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Sete Cidades National Park">Sete Cidades National Park</a></li><li><a href="/explore/teresina-(capital-and-largest-city)" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Teresina (capital and largest city)">Teresina (capital and largest city)</a></li><li><a href="/explore/caatinga-shrublands" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Caatinga shrublands">Caatinga shrublands</a></li><li><a href="/explore/canyons" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="canyons">canyons</a></li><li><a href="/explore/parnaíba-river" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Parnaíba River">Parnaíba River</a></li><li><a href="/explore/poti-river" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Poti River">Poti River</a></li><li><a href="/explore/serra-das-confusões-national-park" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Serra das Confusões National Park">Serra das Confusões National Park</a></li><li><a href="/explore/chapada-das-mangabeiras" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Chapada das Mangabeiras">Chapada das Mangabeiras</a></li><li><a href="/explore/northeastern-brazil-restingas" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Northeastern Brazil restingas">Northeastern Brazil restingas</a></li><li><a href="/explore/maranhão-babaçu-forests" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Maranhão Babaçu forests">Maranhão Babaçu forests</a></li><li><a href="/explore/cerrado-savannas" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Cerrado savannas">Cerrado savannas</a></li><li><a href="/explore/atlantic-dry-forests" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Atlantic dry forests">Atlantic dry forests</a></li><li><a href="/explore/serra-da-capivara-national-park" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Serra da Capivara National Park">Serra da Capivara National Park</a></li><li><a href="/explore/sete-cidades-national-park" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Sete Cidades National Park">Sete Cidades National Park</a></li><li><a href="/explore/serra-das-confusões-national-park" class="block py-2 pl-4 hover:bg-[#8B4513]/10" title="Serra das Confusões National Park">Serra das Confusões National Park</a></li>
-            </ul>
-        </li>
-        <li><a href="/contact" class="block px-4 py-2 hover:bg-[#8B4513]/10">Contact</a></li>
-        <li><a href="/faq" class="block px-4 py-2 hover:bg-[#8B4513]/10">FAQ</a></li>
-        <li><a href="/blog" class="block px-4 py-2 hover:bg-[#8B4513]/10">Blog</a></li>
-        <li><a href="/about" class="block px-4 py-2 hover:bg-[#8B4513]/10">About</a></li>
-    </ul>
-    <script>
-        const menuBtn = document.querySelector('.mobile-nav button');
-        const menu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-            menuBtn.setAttribute('aria-expanded', !expanded);
-            menu.classList.toggle('hidden');
-            menuBtn.querySelector('i').classList.toggle('fa-chevron-down');
-            menuBtn.querySelector('i').classList.toggle('fa-chevron-up');
-        });
-        document.querySelectorAll('.mobile-nav li button').forEach(subBtn => {
-            subBtn.addEventListener('click', () => {
-                const expanded = subBtn.getAttribute('aria-expanded') === 'true';
-                subBtn.setAttribute('aria-expanded', !expanded);
-                const subMenu = document.getElementById(subBtn.getAttribute('aria-controls'));
-                subMenu.classList.toggle('hidden');
-                subBtn.querySelector('i').classList.toggle('fa-chevron-down');
-                subBtn.querySelector('i').classList.toggle('fa-chevron-up');
-            });
-        });
-    </script>
+<nav class="mobile-nav hidden" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <div class="mobile-nav-content">
+        <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle">Services ▼</button>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="services/guided-trips.html">Guided Trips</a></li>\n                    <li><a href="services/naturalisation.html">Naturalisation</a></li>\n                    <li><a href="services/other-services.html">Other Services</a></li>\n                    <li><a href="services/residencies.html">Residencies</a></li>\n                    <li><a href="services/visas.html">Visas</a></li>\n                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
 </nav>

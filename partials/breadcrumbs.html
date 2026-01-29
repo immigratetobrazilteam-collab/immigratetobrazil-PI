@@ -1,10 +1,38 @@
-<nav aria-label="Breadcrumb" class="py-2 text-sm bg-[#FAF0E6] border-b border-[#8B4513]">
-    <div class="container mx-auto px-4">
-        <ol class="flex flex-wrap gap-2 list-none p-0 m-0">
-            <li><a href="/" class="hover:underline" title="Home">Home</a> / </li>
-            <li><a href="/brazil" class="hover:underline" title="Brazil Immigration">Brazil</a> / </li>
-            <li><a href="/northeast-region,-brazil" class="hover:underline" title="Northeast Region, Brazil">Northeast Region, Brazil</a> / </li>
-            <li aria-current="page" class="font-bold">Piauí</li>
+<!-- Breadcrumbs Template -->
+<!-- Usage: Include this file and populate with JavaScript or server-side -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container mx-auto px-4 py-2">
+        <ol class="breadcrumb-list flex gap-2 text-sm">
+            <!-- Dynamically populated -->
         </ol>
     </div>
 </nav>
+
+<script>
+// Breadcrumbs JavaScript Helper
+function generateBreadcrumbs() {
+    const path = window.location.pathname;
+    const segments = path.split('/').filter(s => s && s !== 'index.html');
+    const breadcrumbList = document.querySelector('.breadcrumb-list');
+    
+    if (!breadcrumbList) return;
+    
+    breadcrumbList.innerHTML = '<li><a href="/">Home</a></li>';
+    
+    let currentPath = '';
+    segments.forEach((segment, index) => {
+        currentPath += '/' + segment;
+        const isLast = index === segments.length - 1;
+        const displayName = segment.replace(/-/g, ' ').replace('.html', '').replace(/\b\w/g, l => l.toUpperCase());
+        
+        if (isLast) {
+            breadcrumbList.innerHTML += `<li class="separator">›</li><li aria-current="page">${displayName}</li>`;
+        } else {
+            breadcrumbList.innerHTML += `<li class="separator">›</li><li><a href="${currentPath}">${displayName}</a></li>`;
+        }
+    });
+}
+
+// Auto-generate on page load
+document.addEventListener('DOMContentLoaded', generateBreadcrumbs);
+</script>
